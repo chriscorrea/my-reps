@@ -25,9 +25,6 @@ layout: default
                 <label>
                     <input type="checkbox" id="show_state_results" value="State"> State
                 </label>
-                <label>
-                    <input type="checkbox" id="show_federal_results" value="Federal"> Federal
-                </label>
             </p>
         </div>
         <br />
@@ -58,9 +55,6 @@ layout: default
                   </span>
                   <span id='state-nav' style='display: none;'>
                     <a id="state-name-nav" href="#state-name"></a>
-                  </span>
-                  <span id='fed-nav'>
-                    <a id="federal-name-nav" href="#federal-name">Federal</a></li>
                   </span>
            
                 </ul>
@@ -118,24 +112,6 @@ layout: default
                 <br />
                 <h3 class='text-center' id="state-name" style="text-transform:capitalize;"></h3>
                 <table id="state-results" class="table table-striped table-responsive">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Representative</th>
-                            <th class='hidden-xs hidden-sm'><i class='fa fa-institution'></i> Office</th>
-                            <th class='hidden-xs'><i class='fa fa-map-marker'></i> Address</th>
-                            <th><i class='fa fa-external-link'></i> Links</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
-            </div>
-
-            <div id='federal-container'>
-                <br />
-                <h3 id='federal-name' class='text-center'>United States Federal Government</h3>
-                <table id="federal-results" class="table table-striped table-responsive">
                     <thead>
                         <tr>
                             <th></th>

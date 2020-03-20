@@ -56,7 +56,7 @@ function addressSearch() {
         results_level_set.push('state');
     }
     if ($('#show_federal_results').is(':checked')) {
-        show_federal = true;
+        show_federal = false;
         results_level_set.push('federal');
     }
 

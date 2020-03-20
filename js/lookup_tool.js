@@ -39,7 +39,7 @@ function addressSearch() {
     var show_local   = false;
     var show_county  = false;
     var show_state   = false;
-    var show_federal = false;
+    var show_federal = true;
 
     var results_level_set = [];
     // set levels from checkboxes
@@ -56,7 +56,7 @@ function addressSearch() {
         results_level_set.push('state');
     }
     if ($('#show_federal_results').is(':checked')) {
-        show_federal = false;
+        show_federal = true;
         results_level_set.push('federal');
     }
 

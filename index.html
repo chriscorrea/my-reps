@@ -44,11 +44,10 @@ layout: default
 
 
 <hr />
-            <br />
-            <br />
 
-            <p class="lead text-center" id='results-nav' style = "text-transform:capitalize;">
+            <p class="lead text-center" id='results-nav'">
                 Levels of Government
+                <br />
                 <br />
                   <span id='local-nav' style='display: none;'>
                     <a id="local-name-nav" href="#local-name"></a>
@@ -62,7 +61,7 @@ layout: default
                   <span id='fed-nav'>
                     <a id="federal-name-nav" href="#federal-name">Federal</a></li>
                   </span>
-                  
+           
                 </ul>
             </p>
 
@@ -262,8 +261,8 @@ layout: default
             <% } %>
             <br />
             <strong><%= info.person.name %> <%= formatParty(info.person.party) %></strong><br />
-            <%= info.office.name %><br />
-            <%= info.jurisdiction %>
+            <style="text-transform:capitalize;"><%= info.office.name %><br />
+            <%= info.jurisdiction %></style>
 
         </div>
         <div class='col-xs-8'>
@@ -295,7 +294,7 @@ layout: default
             <strong>Sample Script:</strong>
             <br />
             <br />
-            "Hi, my name is ______ and I'm a resident of <%= info.jurisdiction %>. I’m calling to demand that <%= info.person.name %>’s Office take action to immediately free people from jail. COVID-19 poses severe infection risks whenever people are in close physical proximity with others, regardless of whether an individual shows symptoms. People in jail are unable to distance themselves from others and take preventative measures that are necessary to fight infection. In response to the potential humanitarian crisis in jails in our city, we ask that you advocate for a large release. Additionally, I ask that <%= info.person.name %> direct the police department to stop making arrests when possible or cite and release people instead of bringing them into custody." 
+            "Hi, my name is ______ and I'm a resident of <style="text-transform:capitalize;"><%= info.jurisdiction %></style>. I’m calling to demand that <%= info.person.name %>’s Office take action to immediately free people from jail. COVID-19 poses severe infection risks whenever people are in close physical proximity with others, regardless of whether an individual shows symptoms. People in jail are unable to distance themselves from others and take preventative measures that are necessary to fight infection. In response to the potential humanitarian crisis in jails in our city, we ask that you advocate for a large release. Additionally, I ask that <%= info.person.name %> direct the police department to stop making arrests when possible or cite and release people instead of bringing them into custody." 
         </div>
     </div>
 </script>

@@ -150,16 +150,19 @@ function addressSearch() {
                                 info['emails'] = person.emails;
                             }
 
-                            if(checkFederal(division_id, office_name)) {
+                            //specify policy focus (eg, 'Criminal Justice')
+                            const policyFocus = 'Criminal Justice';
+
+                            if(checkFederal(division_id, office_name) && checkRelevance(policyFocus,office_name)) {
                                 info['jurisdiction'] = 'Federal Government';
                                 federal_people.push(info);
-                            } else if (checkState(division_id)) {
+                            } else if (checkState(division_id)  && checkRelevance(policyFocus,office_name)) {
                                 info['jurisdiction'] = selected_state;
                                 state_people.push(info);
-                            } else if (checkCounty(division_id)){
+                            } else if (checkCounty(division_id) && checkRelevance(policyFocus,office_name)){
                                 info['jurisdiction'] = selected_county;
                                 county_people.push(info);
-                            } else {
+                            } else if  (checkRelevance(policyFocus,office_name)) {
                                 info['jurisdiction'] = selected_local;
                                 local_people.push(info);
                             }
@@ -350,6 +353,42 @@ function formatParty(party) {
     }
     else
         return '';
+}
+
+function checkRelevance(policy, office_name) {
+    //Highlights roles most relevant to policy
+    //console.log('Checking ', office_name.name)
+    if(policy=="Criminal Justice")
+    {
+        //Regular expression to identify criminal justice-relevant roles
+        matchStr = '/Attorney|Police|Sheriff|Judge/';
+    }
+    else{
+        return true;
+    }
+
+    if(office_name['name'].search(matchStr) > -1)
+    {
+        //If matching regular expression, return True
+        return true;
+    }
+    else {
+        //include top executives
+        if(office_name['name'].search('Mayor|Governor|Alder|Select|President|Executive') > -1) {
+            //Executives;
+            return true;
+        }
+        else if (office_name['name'].search('Representative|Senator')) {
+            //Representatives
+            return True
+        }
+        else {
+            //else
+            return false;
+        }
+
+    }
+    
 }
 
 function toTitleCase(str)

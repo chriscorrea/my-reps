@@ -380,7 +380,7 @@ function checkRelevance(policy, office_name) {
         }
         else if (office_name['name'].search('Representative|Senator')) {
             //Representatives
-            return True
+            return true;
         }
         else {
             //else
